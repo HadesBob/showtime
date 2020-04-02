@@ -17,42 +17,18 @@
     {% load static %}
       <link rel="stylesheet" href="{% static 'css/wheel.css' %}">
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
-    <script src="{% static 'js/test.js' %}"></script>
+   
      
   
 
 </head>
 <body class="body">
-	<div class="main-wrapper">
-	<section class="video-wrapper">
-		<video class="video" src="/static/videos/smoke.mp4" autoplay muted></video>
-		<button class="skip-button btn btn-lg btn-warning">Skip</button>
-	</section>
-
-
-	<section class="wheel-wrapper">
-		
-			<div class="wheel-content">
-				<div class="wheel-carrousel">
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/django-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/java-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/mysql-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/css-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/html-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/js-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/vue-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/bootstrap-icon.png"></figure>
-					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/gift.png"></figure>
-				</div>
-			</div>
-			
-	</section>
 	
-	
-	
-</div>
 	{% block content %}
 	{% endblock %}
+	
+
+
 	
 	 <script  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/TextPlugin.js"></script>
 	 <script  src=" https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.js"></script>
