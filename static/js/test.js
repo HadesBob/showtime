@@ -18,7 +18,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	var rightRocket = $('.rocket-right');
 	var letter = document.querySelectorAll('.letter-span');
 	var isTilesHide = true;
-	
+
 
 
 	var tl = gsap.timeline();
@@ -29,7 +29,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	.to('.video-wrapper',2,{opacity:0, ease: "linear"});
 	
 	
-		tl2 = gsap.timeline({delay: 14});
+		tl2 = gsap.timeline({delay: 13});
 		tl2.to(wheelWrapper,1,{visibility: "transparent"})
 			.to(wheelContent,3,{scale:0.7, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1");
 
@@ -117,9 +117,22 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 
 	initTiles();
 	
-
+	function findByName(array, name){
+		for(var i=1; i<array.data.length; i++){
+			if(array.data[i].name === name){
+				return array.data[i].skills;
+			}
+			else{
+				return "Kupsko";
+			}
+		}
+	}
 
 	function initContent(id, iconUrl, title){
+	$.getJSON('/static/json/description.json', function(data) {
+             var x = findByName(data, id);
+             var result = data.data;
+               })
 	var tilesContentWrapper = $('.content-wrapper');	
 	var contentBox = $(document.createElement('div')).addClass('content-box').attr('id',id);
 	tilesContentWrapper.append(contentBox);
@@ -131,6 +144,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	tilesContentHeader.append(icon, title, closeIcon);
 	var tilesContent = $(document.createElement('div')).addClass('content');
 	contentBox.append(tilesContent);
+	
 		closeIcon.click(function(){
 			var hide = gsap.timeline();
 				hide.to(wheelContent, 1, {scale: 0.7,y:0}).to('.tile', 1, {
@@ -154,56 +168,66 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 		var id;
 		var iconUrl;
 		var title;
+		var array;
 		switch(value) {
   			case "java":
     			id = "java-content";
     			iconUrl = "java-icon.png";
     			title = "JAVA";
+    			
     			break;
   			case "html":
    				id = "html-content";
     			iconUrl = "html-icon.png";
-    			title = "HTML";
+    			title = "HTML and CSS";
+  
    				break;
   			case "django":
   				id = "django-content";
     			iconUrl = "django-icon.png";
     			title = "DJANGO";
+    
     			break;
-    		case "bootstrap":
-  				id = "bootstrap-content";
-    			iconUrl = "bootstrap-icon.png";
-    			title = "BOOTSTRAP";
+    		case "skills":
+  				id = "skills-content";
+    			iconUrl = "skills-icon.png";
+    			title = "OTHER SKILLS";
+    			
     			break;
     		case "js":
   				id = "js-content";
     			iconUrl = "js-icon.png";
     			title = "JAVA SCRIPT";
+    
     			break;
     		case "mysql":
   				id = "mysql-content";
     			iconUrl = "mysql-icon.png";
     			title = "MYSQL";
+    			
     			break;
-    		case "vue":
-  				id = "vue-content";
-    			iconUrl = "vue-icon.png";
-    			title = "VUE.JS";
+    		case "work":
+  				id = "work-content";
+    			iconUrl = "work-icon.png";
+    			title = "EXPERIENCE";
+    	
     			break;
-    		case "css":
-  				id = "css-content";
-    			iconUrl = "css-icon.png";
-    			title = "CSS";
+    		case "school":
+  				id = "school-content";
+    			iconUrl = "school-icon.png";
+    			title = "EDUCATION"
+    			
     			break;
-    		case "gift":
-  				id = "gift-content";
-    			iconUrl = "gift.png";
-    			title = "O mnie";
+    		case "start":
+  				id = "start-content";
+    			iconUrl = "start-icon.png";
+    			title = "HELLO WORLD";
+    		
     			break;
 		}
 
 		if(isTilesHide){
-			initContent(id, iconUrl, title);
+			initContent(id, iconUrl, title, array);
 			var show = gsap.timeline();
 			show.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
 					scale:1,

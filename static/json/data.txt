@@ -1,0 +1,45 @@
+html css---------
+You would be not suprised if I would told you that Htlm was the first language that I have learned.
+transitions, animations, sass, bootstrap, bulma, rwd
+
+
+java script---------
+czysty javascript, jquery, gsap, vue js
+
+
+django------------
+modele, email, aplikacja jest tworzona w django, 
+api, rest, validacja,
+
+mysql-------------
+tworzenie zapytań. wyszukiwanie w tabelach tworznie zapytań join , powiązania,
+
+
+java---------
+podstawy + kurs na udemy,
+umiejetnośc tworzenia prostych klas i funcji
+servlety, jsp, jpa, hibernate, 
+
+
+szkoła ----------
+
+I liceum ogólnokształcące
+Finanse i Rachunkowość na Uniwersytecie Łódzkim
+
+praca ------ 
+
+różne restauracje
+Praca za granicą
+Infosys
+
+
+dodatkowe umiejetnośći
+
+-excxel(vba)
+-angielski
+-holenderski
+-git 
+
+start ---------
+
+

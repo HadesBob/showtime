@@ -139,6 +139,9 @@
 	cursor: pointer;
 	
 }
+#start-content{
+	opacity:1;
+}
 .close-icon{
 	width: 50px;
 	height: 50px;
