@@ -14,7 +14,6 @@
 	left:0;
 	top:0;
 	width: 100%;
-
 }
 
 .wheel-content{
@@ -23,15 +22,12 @@
 	perspective: 1000px;
 	position: relative;
 	transform: scale(0);
-	
-
 }
 .wheel-carrousel{
 	width:100%;
 	position: absolute;
 	transform-style: preserve-3d;
 	margin: auto;
-
 }
 
 .wheel-carrousel:hover{
@@ -47,7 +43,6 @@
 	position: absolute;
 	box-shadow: 0 0 20px 0 #000;
 	border-radius: 2px;
-
 }
 
 .wheel-carrousel figure:nth-child(1){
@@ -83,22 +78,18 @@
 	transform: rotateY(320deg) translateZ(300px);
 }
 
-
 .wheel-carrousel-image{
 	image-rendering: auto;
 	transition: all 300ms;
 	width: 100%;
 	height: 100%;
-
 }
 
-
-.tiles-wrapper{
+.collapse-section{
 	position: relative;
 	left: 10%;
 	width: 80%;
 	height: 400px;
-
 }
 .tiles-container{
 	width: 100%;
@@ -108,47 +99,55 @@
 	left:4%;
 	display: inline-flex;
 	flex-wrap: wrap;
-	margin-top: 30px;
-	
+	margin-top: 30px;	
 	opacity: 0.3;
 }
-.tiles-content-wrapper{
+
+.tile{
+	margin-left: 2px;
+	margin-bottom: 2px;
+	opacity:0;
+	transform: scale(0) translateY(80px);
+	background-color: white;
+	}
+.content-wrapper{
 	width: 100%;
 	position: absolute;
 	height: 100%;
 	top:0;
 	left:4%;
 	margin-top: 30px;
-
+	
 }
-.tile{
-	margin-left: 2px;
-	margin-bottom: 2px;
-	opacity:0.3;
-	background-color: white;
-	}
-.tiles-content-header{
+.content-box{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index:2;
+}
+.content-header{
 	width: 90%;
 	height: 60px;
 	display: grid;
 	grid-template-columns: 10% 80% 10%;
 }
-.tiles-content-icon{
+.content-icon{
 	width: 50px;
 	height: 50px;
 	margin: auto;
 	cursor: pointer;
 	
 }
-.tiles-close-icon{
+.close-icon{
 	width: 50px;
 	height: 50px;
 	margin: auto;
 	cursor: pointer;
-	
+	z-index:32;
 	
 }
-.tiles-content-title{
+.content-title{
 	text-align: center;
 	font-size: 40px;
 	color: white;
@@ -156,11 +155,13 @@
 	height: 100%;
 	color: wheat;
 }
-.tiles-content{
+.content{
 	width: 100%;
 	height: 85%;
-	z-index: 2;
+	
 }
+
+
 table tr td{
 	color: white;
 	font-family: "Special Elite";

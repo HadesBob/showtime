@@ -31,7 +31,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	
 		tl2 = gsap.timeline({delay: 1});
 		tl2.to(wheelWrapper,1,{visibility: "transparent"})
-			.to(wheelContent,4,{scale:0.8, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1");
+			.to(wheelContent,3,{scale:0.7, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1");
 
 			tl3 = gsap.timeline();
 			tl3.fromTo(wheelCarousel,5,{rotateY:360},{rotateY:0,repeat: -1, ease: "linear"})
@@ -103,8 +103,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	}
 
 	function initTiles(){
-			var tilesWrapper = $('.tiles-container');
-	
+			var tilesWrapper = $('.tiles-container');	
 			var tilesWrapperWidth = tilesWrapper.width();
 			var tilesWrapperHeight = tilesWrapper.height();
 			for(var i=0; i<56; i++){
@@ -114,40 +113,114 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 			}
 			
 			}
-initTiles();
 
-	wheelCarousel.click(function(){
-		var tile = document.querySelectorAll('.tile');
-		if(isTilesHide){
-			
-			gsap.to('.tile', 1, {
-					scale:1,
-					y:0,
-					stagger:{
-						amount:1,
-						axis: "x",
-						ease: Power3.easeOut
-					}
-				})
-			isTilesHide = false;
-		}else{
-			
-			gsap.to('.tile', 1, {
+
+	initTiles();
+	
+
+
+	function initContent(id, iconUrl, title){
+	var tilesContentWrapper = $('.content-wrapper');	
+	var contentBox = $(document.createElement('div')).addClass('content-box').attr('id',id);
+	tilesContentWrapper.append(contentBox);
+	var tilesContentHeader = $(document.createElement('div')).addClass('content-header');
+	contentBox.append(tilesContentHeader);
+	var icon = $(document.createElement('img')).addClass('content-icon').attr('src','/static/photos/' + iconUrl);
+	var title = $(document.createElement('h1')).addClass('content-title').text(title);
+	var closeIcon = $(document.createElement('img')).addClass('close-icon').attr('src','/static/photos/close4.png').attr('value', id).attr('id', 'close-icon');
+	tilesContentHeader.append(icon, title, closeIcon);
+	var tilesContent = $(document.createElement('div')).addClass('content');
+	contentBox.append(tilesContent);
+		closeIcon.click(function(){
+			var hide = gsap.timeline();
+				hide.to(wheelContent, 1, {scale: 0.7,y:0}).to('.tile', 1, {
 					scale:0,
 					y:80,
+					opacity: 0,
 					stagger:{
 						amount:1,
 						axis: "x",
 						ease: Power3.easeOut
 					}
-				})
-			isTilesHide = true;
+				}, "-=1").to('#' + id, 1,{opacity: 0});
+				isTilesHide = true;
+		})
+	}
+
+
+	$('.wheel-carrousel-item').click(function(e){
+		var tile = document.querySelectorAll('.tile');
+		var value = $(this).attr('value');
+		var id;
+		var iconUrl;
+		var title;
+		switch(value) {
+  			case "java":
+    			id = "java-content";
+    			iconUrl = "java-icon.png";
+    			title = "JAVA";
+    			break;
+  			case "html":
+   				id = "html-content";
+    			iconUrl = "html-icon.png";
+    			title = "HTML";
+   				break;
+  			case "django":
+  				id = "django-content";
+    			iconUrl = "django-icon.png";
+    			title = "DJANGO";
+    			break;
+    		case "bootstrap":
+  				id = "bootstrap-content";
+    			iconUrl = "bootstrap-icon.png";
+    			title = "BOOTSTRAP";
+    			break;
+    		case "js":
+  				id = "js-content";
+    			iconUrl = "js-icon.png";
+    			title = "JAVA SCRIPT";
+    			break;
+    		case "mysql":
+  				id = "mysql-content";
+    			iconUrl = "mysql-icon.png";
+    			title = "MYSQL";
+    			break;
+    		case "vue":
+  				id = "vue-content";
+    			iconUrl = "vue-icon.png";
+    			title = "VUE.JS";
+    			break;
+    		case "css":
+  				id = "css-content";
+    			iconUrl = "css-icon.png";
+    			title = "CSS";
+    			break;
+    		case "gift":
+  				id = "gift-content";
+    			iconUrl = "gift.png";
+    			title = "O mnie";
+    			break;
 		}
 
-		
-			
-				
-		
-	})
+		if(isTilesHide){
+			initContent(id, iconUrl, title);
+			var show = gsap.timeline();
+			show.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
+					scale:1,
+					y:0,
+					opacity: 0.3,
+					stagger:{
+						amount:1,
+						axis: "x",
+						ease: Power3.easeOut
+					}
+				}, "-=1").to('#' + id, 1,{opacity: 1});
+			isTilesHide = false;
+		}else{
+			return;
+		}	
+	});
+
+	
 });
 
