@@ -29,7 +29,7 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	.to('.video-wrapper',2,{opacity:0, ease: "linear"});
 	
 	
-		tl2 = gsap.timeline({delay: 1});
+		tl2 = gsap.timeline({delay: 14});
 		tl2.to(wheelWrapper,1,{visibility: "transparent"})
 			.to(wheelContent,3,{scale:0.7, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1");
 
