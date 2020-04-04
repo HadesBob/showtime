@@ -1,0 +1,113 @@
+.slider-wrapper{
+	height: 100vh;
+	background: url("/static/photos/space4.jpg");
+	box-sizing: border-box;
+	background-size: cover;
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+
+}
+
+.slider-content{
+	padding-top: 300px;
+	width:210px;
+	perspective: 1000px;
+	position: relative;
+	margin-left: 550px;
+
+
+}
+.slider-carrousel{
+	width:100%;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+.slider-carrousel:hover{
+	cursor: pointer;
+	transform: rotateY(0deg);
+}
+.slider-carrousel-item {
+	width: 100%;
+	height: 120px;
+	overflow: hidden;
+	position: absolute;
+	border-radius: 40px;
+	position: absolute;
+	box-shadow: 0 0 20px 0 #000;
+	border-radius: 2px;
+
+}
+
+.slider-carrousel figure:nth-child(1){
+	transform: rotateY(0deg) translateZ(300px);
+}
+.slider-carrousel figure:nth-child(2){
+	transform: rotateY(40deg) translateZ(300px);
+	background-color:rgba(128, 2, 121, 0.3);
+}
+.slider-carrousel figure:nth-child(3){
+	transform: rotateY(80deg) translateZ(300px);
+	background-color:rgba(11, 11, 111, 0.3);
+}
+.slider-carrousel figure:nth-child(4){
+	transform: rotateY(120deg) translateZ(300px);
+	background-color:rgba(18, 23, 221, 0.3);
+}
+.slider-carrousel figure:nth-child(5){
+	transform: rotateY(160deg) translateZ(300px);
+	background-color:rgba(255, 12, 11, 0.3);
+}
+.slider-carrousel figure:nth-child(6){
+	transform: rotateY(200deg) translateZ(300px);
+	background-color:wheat;
+}
+.slider-carrousel figure:nth-child(7){
+	transform: rotateY(240deg) translateZ(300px);
+}
+.slider-carrousel figure:nth-child(8){
+	transform: rotateY(280deg) translateZ(300px);
+}
+.slider-carrousel figure:nth-child(9){
+	transform: rotateY(320deg) translateZ(300px);
+}
+
+
+.slider-carrousel-image{
+	image-rendering: auto;
+	transition: all 300ms;
+	width: 100%;
+	height: 100%;
+
+}
+
+.rocket-box{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	z-index: 2;
+}
+.rocket-left{
+	top: 400px;
+	left: 50px;
+	transform: rotateZ(220deg);
+}
+.rocket-right{
+	top: 400px;
+	right: 100px;
+}
+.rocket-icon{
+	width: 100%;
+	height: 100%;
+}
+
+#log{
+	color: white;
+	position: absolute;
+	top: 20px;
+	left: 40px;
+	z-index: 3;
+	font-size: 30px;
+}

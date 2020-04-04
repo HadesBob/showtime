@@ -11,6 +11,8 @@
 	<section class="wheel-wrapper">
 		
 			<div class="wheel-content">
+				<div class="rocket-left rocket-box"><img class="rocket-icon" src="/static/svg/rocket.svg"></div>
+			<div class="rocket-right rocket-box"><img class="rocket-icon" src="/static/svg/rocket.svg"></div>
 				<div class="wheel-carrousel">
 					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/django-icon.png"></figure>
 					<figure class="wheel-carrousel-item"><img class="wheel-carrousel-image" src="/static/photos/java-icon.png"></figure>
@@ -25,10 +27,27 @@
 			</div>
 			
 	</section>
-	
+	<section class="tiles-wrapper">
+		<div class="tiles-container"></div>
+		<div class="tiles-content-wrapper">
+			<div class="tiles-content-header">
+				<img src="/static/photos/html-icon.png" class="tiles-content-icon">
+				<h1 class="tiles-content-title">&#60;HTML&#62;</h1>
+				<img src="/static/photos/close4.png" class="tiles-close-icon">
+			</div>
+			<div class="tiles-content">
+				<table>
+					<tr>
+						<td>Coś już tam potrafie</td>
+					</tr>
+				</table>
+			</div>
+				
+		
+		</div>
+	</section>
 	
 	
 </div>
-    {% load static %}
- <script src="{% static 'js/test.js' %}"></script>
+
 {% endblock %}
