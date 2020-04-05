@@ -5,6 +5,13 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 	spanWrapper.css({"letterSpacing": "8px"});
 	wrapper.append(spanWrapper);
 	var windowWidth = $( window ).width();
+
+	if(windowWidth < 700){
+		var isMobile = true;
+	}
+	else{
+		var isMobile = false;
+	}
 	var windowHeight = $( window ).height();
 	var documentWidth = $( document ).width();
 	var documentHeight = $( document ).height();
@@ -31,14 +38,14 @@ function initTiles(){
 			}
 
 
-	initTiles();
+initTiles();
+
+
 
 
 function initContent(id, iconUrl, title){
-	$.getJSON('/static/json/description.json', function(data) {
-             var x = findByName(data, id);
-             var result = data.data;
-               })
+	
+	
 	var tilesContentWrapper = $('.content-wrapper');	
 	var contentBox = $(document.createElement('div')).addClass('content-box').attr('id',id);
 	tilesContentWrapper.append(contentBox);
@@ -50,7 +57,24 @@ function initContent(id, iconUrl, title){
 	tilesContentHeader.append(icon, title, closeIcon);
 	var tilesContent = $(document.createElement('div')).addClass('content');
 	contentBox.append(tilesContent);
+	$.getJSON('/static/json/description.json', function(data) {
+    	$.each(data.data, function(index, element) {
+        	if(element.name == id){
+        		var skills = element.skills;
+        		$.each(skills, function(index, skill){
+        			var skillP = $(document.createElement('p')).addClass('skill-p').text(skill);
+        			tilesContent.append(skillP);
+        		})
+        	}
+        	else{
+        		console.log("false");
+        	}
+    	});
+	});
 	
+
+	// close content function 
+
 		closeIcon.click(function(){
 			var hide = gsap.timeline();
 				hide.to(wheelContent, 0.5, {scale: 0.7,y:0},).to('.tile',0.5, {
@@ -64,20 +88,29 @@ function initContent(id, iconUrl, title){
 					}
 				}, "-=1").to('#' + id, 0.5,{opacity: 0, filter:"blur(20px)"}, "-=1");
 				isTilesHide = true;
+				$('#'+id).remove();
 		})
 	}
 
 	initContent("start-content", "start-icon.png", "HELLO WORLD");
-	var tl = gsap.timeline();
+	if(!isMobile){
+		var tl = gsap.timeline();
 	tl.from(letter, 1, {opacity: 0, filter:"blur(160px)", stagger: .25, ease:"ease-out"})
 	.to(letter,1, {stagger:.01, color: "white", ease:"ease-out",textShadow:"0px 5px 10px white"})
 	.to(letter,1, {stagger:.05,  textShadow:"0px 5px 40px gold", color: "gold", ease: "ease-out",opacity:0, filter:"blur(100px)"})
 	.to('.video',0.5,{opacity:0, complete:removeVideoPart})
 	.to('.video-wrapper',2,{opacity:0, ease: "linear"});
-	
-	
-		tl2 = gsap.timeline({delay: 13});
-		tl2.to(wheelWrapper,1,{visibility: "transparent"})
+	var tl2 = gsap.timeline({delay: 14});
+	}
+	else{
+	removeVideoPart();
+	var	tl2 = gsap.timeline({delay: 1});
+		
+		
+
+	}
+
+	tl2.to(wheelWrapper,1,{visibility: "transparent"})
 			.to(wheelContent,2,{scale:0.7, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1")
 			.to('#start-content', 1, {opacity:1, filter:"blur(0px)"}).to('.tile', 1, {
 					scale:1,
@@ -88,7 +121,7 @@ function initContent(id, iconUrl, title){
 						ease: Power3.linear
 					}
 				});
-
+	
 			tl3 = gsap.timeline();
 			tl3.fromTo(wheelCarousel,5,{rotateY:360},{rotateY:0,repeat: -1, ease: "linear"})
 			
@@ -145,12 +178,6 @@ function initContent(id, iconUrl, title){
 		}
 		
 	}
-
-	
-	
-
-
-	
 
 
 	$('.wheel-carrousel-item').click(function(e){
@@ -218,7 +245,7 @@ function initContent(id, iconUrl, title){
 		}
 
 		if(isTilesHide){
-			initContent(id, iconUrl, title, array);
+			initContent(id, iconUrl, title);
 			var show = gsap.timeline();
 			show.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
 					scale:1,
@@ -232,7 +259,33 @@ function initContent(id, iconUrl, title){
 				}, "-=1").to('#' + id, 1,{opacity: 1, filter:"blur(0px)"});
 			isTilesHide = false;
 		}else{
-			return;
+			tl5 = gsap.timeline();
+			tl5.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
+					scale:0,
+					y:80,
+					opacity: 0,
+					stagger:{
+						amount:1,
+						axis: "x",
+						ease: Power3.easeOut
+					}
+				}, "-=1").to('.content-box', 1,{opacity: 0, filter:"blur(20px)"}, "-=1");
+			
+			$('.content-box').remove();
+			initContent(id, iconUrl, title);
+
+			var showNew = gsap.timeline({delay: 1});
+			showNew.to('.tile', 1, {
+					scale:1,
+					y:0,
+					opacity: 0.3,
+					stagger:{
+						amount:1,
+						axis: "x",
+						ease: Power3.easeOut
+					}
+				}).to('#'+id, 1,{opacity: 1, filter:"blur(0px)"});
+			isTilesHide = false;
 		}	
 	});
 
@@ -258,9 +311,9 @@ function startWheel(){
 	}
 
 		function findByName(array, name){
-		for(var i=1; i<array.data.length; i++){
-			if(array.data[i].name === name){
-				return array.data[i].skills;
+		for(var i=1; i<array.length; i++){
+			if(array[i].name = name){
+				return array[i].skills;
 			}
 			else{
 				return "Kupsko";

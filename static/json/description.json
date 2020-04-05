@@ -3,20 +3,24 @@
 	"data": [{
 			"name": "java-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"My knowledge about Java is basic",
+				"I finished the course on Udemy for beginers",
+				"Additionally I have basic knowladge about Servlets",
+				"Hibernate, JPA and JSP pages",
+				"I am able to write simple classess and functions"
 			]},
 			{
 			"name": "html-content",
 			"skills": [
-				"Nie zaskoczy nikogo fakt, iż był to pierwszy język z jakim się zapoznałem",
-				"Znam bardzo dobrze składnie języka"
+				"Those two I know pretty good, I know how to use Bootsrap and Dumla",
+				"I can create responsive website using css, I know what is SASS and how to use it",
+				"I am familiar with animations and transitions in css"
+
 			]},
 			{
-			"name": "css-content",
+			"name": "work-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"After I have graduaded I High School in Konin"
 			]},
 			{
 			"name": "js-content",
@@ -43,9 +47,9 @@
 				"knamlkmcaclksmc"
 			]},
 			{
-			"name": "aboutme-content",
+			"name": "start-content",
 			"skills": [
-				"ajkfnaldfnalfk",
+				"Będzie się działo",
 				"knamlkmcaclksmc"
 			]}
 
