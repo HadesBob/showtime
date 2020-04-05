@@ -8,9 +8,17 @@ gsap.registerPlugin(MotionPathPlugin, TextPlugin, Draggable);
 
 	if(windowWidth < 700){
 		var isMobile = true;
+		var wheelScale = 0.4;
+		var wheelDownScale = 0.4;
+		var wheelY = 0;
+		var wheelDownY =0;
 	}
 	else{
 		var isMobile = false;
+		var wheelScale = 0.7;
+		var wheelDownScale = 0.5;
+		var wheelY = 0;
+		var wheelDownY = 80;
 	}
 	var windowHeight = $( window ).height();
 	var documentWidth = $( document ).width();
@@ -77,7 +85,7 @@ function initContent(id, iconUrl, title){
 
 		closeIcon.click(function(){
 			var hide = gsap.timeline();
-				hide.to(wheelContent, 0.5, {scale: 0.7,y:0},).to('.tile',0.5, {
+				hide.to(wheelContent, 0.5, {scale: wheelScale,y:wheelY},).to('.tile',0.5, {
 					scale:0,
 					y:80,
 					opacity: 0,
@@ -100,7 +108,7 @@ function initContent(id, iconUrl, title){
 	.to(letter,1, {stagger:.05,  textShadow:"0px 5px 40px gold", color: "gold", ease: "ease-out",opacity:0, filter:"blur(100px)"})
 	.to('.video',0.5,{opacity:0, complete:removeVideoPart})
 	.to('.video-wrapper',2,{opacity:0, ease: "linear"});
-	var tl2 = gsap.timeline({delay: 14});
+	var tl2 = gsap.timeline({delay: 1});
 	}
 	else{
 	removeVideoPart();
@@ -111,7 +119,7 @@ function initContent(id, iconUrl, title){
 	}
 
 	tl2.to(wheelWrapper,1,{visibility: "transparent"})
-			.to(wheelContent,2,{scale:0.7, marginLeft:"600px", paddingTop: "500px", complete:removeVideoWrapper}, "-=1")
+			.to(wheelContent,2,{scale:wheelScale, complete:removeVideoWrapper}, "-=1")
 			.to('#start-content', 1, {opacity:1, filter:"blur(0px)"}).to('.tile', 1, {
 					scale:1,
 					y:0,
@@ -247,7 +255,7 @@ function initContent(id, iconUrl, title){
 		if(isTilesHide){
 			initContent(id, iconUrl, title);
 			var show = gsap.timeline();
-			show.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
+			show.to(wheelContent, 1, {scale: wheelDownScale, y:wheelDownY}).to('.tile', 1, {
 					scale:1,
 					y:0,
 					opacity: 0.3,
@@ -260,7 +268,7 @@ function initContent(id, iconUrl, title){
 			isTilesHide = false;
 		}else{
 			tl5 = gsap.timeline();
-			tl5.to(wheelContent, 1, {scale: 0.5, y:100}).to('.tile', 1, {
+			tl5.to(wheelContent, 1, {scale: wheelDownScale, y:wheelDownY}).to('.tile', 1, {
 					scale:0,
 					y:80,
 					opacity: 0,
