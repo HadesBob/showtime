@@ -12,45 +12,52 @@
 			{
 			"name": "html-content",
 			"skills": [
-				"Those two I know pretty good, I know how to use Bootsrap and Dumla",
-				"I can create responsive website using css, I know what is SASS and how to use it",
-				"I am familiar with animations and transitions in css"
+				"Those two I know pretty good, I know how to use Bootsrap and Bulma frameworks",
+				"I can create responsive website using css, I know what preprocessor SASS is, and how to use it.",
+				"I am familiar with animations and transitions in css."
 
 			]},
 			{
-			"name": "work-content",
+			"name": "school-content",
 			"skills": [
-				"After I have graduaded I High School in Konin"
+				"After I had graduaded I High School of Tadeusz Kościuszko in Konin in 2008, I started studies on University of Lodz",
+				"My choice was International Relationships, but after one year I decided to change the profile to better suit my skills .",
+				"Finally I have graduaded Finance and Accounting profile with Bechelor degree in 2014."
 			]},
 			{
 			"name": "js-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"I really enjoy typing code in JavaScript. I have already know some basics.",
+				"In this project I am using jQuery and GSAP libraries to make all of the animations.",
+				"From three of the most popular frameworks I chose Vue.js to be the first I put my steps in, so I already know how to create simple project."
 			]},
 			{
 			"name": "skills-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"English (B1)",
+				"Dutch (A2)",
+				"Writing macros in Excell Visual Basic",
+				"Basics of Photoshop"
 			]},
 			{
 			"name": "mysql-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"",
+				""
 			]},
 			{
 			"name": "django-content",
 			"skills": [
-				"ajkfnaldfnalfk",
-				"knamlkmcaclksmc"
+				"The project is created in Django framework. I chose Django, because of its simplicity.",
+				"Clear documentation and numerous tutorials in the web are letting me to understand more and more web programming.",
+				"I know routing, creating models, templating and other basic functionalities of the framework. However my knowledge is growing every day."
 			]},
 			{
 			"name": "start-content",
 			"skills": [
-				"Będzie się działo",
-				"knamlkmcaclksmc"
+				"Welcome on my first website. My name is Łukasz Goiński and my big dream is to became professional Front-end devloper.",
+				"I have created this website not only to show you what I already can make, but also to constantly develop my skills and abilities.",
+				"Under plaese find more details about me. If would you like to ask me any questions do not hestitate and conntact with me"
 			]}
 
 

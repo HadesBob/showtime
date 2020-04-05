@@ -112,7 +112,7 @@ function initContent(id, iconUrl, title){
 	}
 	else{
 	removeVideoPart();
-	var	tl2 = gsap.timeline({delay: 1});
+	var	tl2 = gsap.timeline({delay: 14});
 		
 		
 
