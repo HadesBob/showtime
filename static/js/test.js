@@ -108,11 +108,11 @@ function initContent(id, iconUrl, title){
 	.to(letter,1, {stagger:.05,  textShadow:"0px 5px 40px gold", color: "gold", ease: "ease-out",opacity:0, filter:"blur(100px)"})
 	.to('.video',0.5,{opacity:0, complete:removeVideoPart})
 	.to('.video-wrapper',2,{opacity:0, ease: "linear"});
-	var tl2 = gsap.timeline({delay: 1});
+	var tl2 = gsap.timeline({delay: 14});
 	}
 	else{
 	removeVideoPart();
-	var	tl2 = gsap.timeline({delay: 14});
+	var	tl2 = gsap.timeline({delay: 1});
 		
 		
 
