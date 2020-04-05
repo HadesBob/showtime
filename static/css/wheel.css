@@ -212,9 +212,39 @@ table tr td{
 	position: relative;
 	transform: scale(0);
 }
-.skills-p{
+.skill-p{
 	font-size: 14px;
 }
+.content{
+	margin-top: 5px;
+}
+.content-title{
+	font-size: 20px;
+	padding-top: 5px;
+}
+.content-icon{
+	width: 40px;
+	height: 40px;
 
-
+}
+.close-icon{
+	width: 30px;
+	height: 30px;
+	margin-top: 0px;
+}
+.rocket-box{
+	width: 70px;
+	height: 70px;
+		
+}
+.rocket-left{
+	top: 710px;
+	left: -340px;
+	transform: rotateZ(-90deg);
+}
+.rocket-right{
+	top:710px;
+	left: 470px;
+	transform: rotateZ(0deg);
+}
 }
