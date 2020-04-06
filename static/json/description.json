@@ -3,16 +3,15 @@
 	"data": [{
 			"name": "java-content",
 			"skills": [
-				"My knowledge about Java is basic",
-				"I finished the course on Udemy for beginers",
-				"Additionally I have basic knowladge about Servlets",
-				"Hibernate, JPA and JSP pages",
-				"I am able to write simple classess and functions"
+				"My knowledge about Java is only basic. I finished the course on Udemy for begginers:",
+				"https://www.udemy.com/certificate/UC-d65f749b-0630-46f7-b713-faf6744dcbeb/",
+				"Additionally I have gained basic knowladge about Servlets, Hibernate, JPA and JSP pages",
+				"I am able to write simple classess and methods"
 			]},
 			{
 			"name": "html-content",
 			"skills": [
-				"Those two I know pretty good, I know how to use Bootsrap and Bulma frameworks",
+				"I know how to use Bootsrap and Bulma frameworks acoording to RWD technic.",
 				"I can create responsive website using css, I know what preprocessor SASS is, and how to use it.",
 				"I am familiar with animations and transitions in css."
 
@@ -20,16 +19,17 @@
 			{
 			"name": "school-content",
 			"skills": [
-				"After I had graduaded I High School of Tadeusz Kościuszko in Konin in 2008, I started studies on University of Lodz",
-				"My choice was International Relationships, but after one year I decided to change the profile to better suit my skills .",
+				"After I had graduaded I High School of Tadeusz Kościuszko in Konin in 2008, I started studies on University of Lodz.",
+				"My choice was International Relationships, but after one year I decided to change the profile to better suit my skills.",
 				"Finally I have graduaded Finance and Accounting profile with Bechelor degree in 2014."
 			]},
 			{
 			"name": "js-content",
 			"skills": [
-				"I really enjoy typing code in JavaScript. I have already know some basics.",
+				"I have an basic understanding of JavaScript and DOM-related concepts.",
 				"In this project I am using jQuery and GSAP libraries to make all of the animations.",
 				"From three of the most popular frameworks I chose Vue.js to be the first I put my steps in, so I already know how to create simple project."
+				
 			]},
 			{
 			"name": "skills-content",
@@ -42,22 +42,31 @@
 			{
 			"name": "mysql-content",
 			"skills": [
-				"",
-				""
+				"I can create database, create table and make all basic queries.",
+				"I know aggregate functions, and how to manipulate queries  outputs as well.",
+				"I know how to query multiple tables use JOIN method."
+				
 			]},
 			{
 			"name": "django-content",
 			"skills": [
 				"The project is created in Django framework. I chose Django, because of its simplicity.",
-				"Clear documentation and numerous tutorials in the web are letting me to understand more and more web programming.",
-				"I know routing, creating models, templating and other basic functionalities of the framework. However my knowledge is growing every day."
+				"Clear documentation and numerous tutorials in the web are letting me to understand more and more about web programming.",
+				"I know already routing, creating models and serializers, templating and other basic functionalities of the framework. However my knowledge is constantly growing every day."
 			]},
 			{
 			"name": "start-content",
 			"skills": [
-				"Welcome on my first website. My name is Łukasz Goiński and my big dream is to became professional Front-end devloper.",
-				"I have created this website not only to show you what I already can make, but also to constantly develop my skills and abilities.",
-				"Under plaese find more details about me. If would you like to ask me any questions do not hestitate and conntact with me"
+				"Welcome on my first website. My name is Łukasz Goiński and my big dream is to become professional Front-end devloper.",
+				"I have created this website not only to show you what I already can produce, but also for constant developing of my skills and abilities.",
+				"If would you like to ask me any questions, do not hestitate and conntact with me."
+			]},
+			{
+			"name": "work-content",
+			"skills": [
+				"During my studies my passion for cooking evolved into my proffesion. From 2014 I was working in the Netherlands.",
+				"In February 2018 I have started my first office job as accountist in Infosys BPO Poland in Lodz. In May 2019 I have decided to move to Netherlands again.",
+				"Currently I am preparing myself to begin a job as junior front-end developer."
 			]}
 
 
